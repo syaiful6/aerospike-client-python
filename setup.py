@@ -158,7 +158,7 @@ if DARWIN:
     # ---------------------------------------------------------------------------
     extra_compile_args = extra_compile_args + [
         '-D_DARWIN_UNLIMITED_SELECT',
-        '-DMARCH_x86_64'
+        '-DMARCH_native'
         ]
 
     if AEROSPIKE_C_HOME:
@@ -170,7 +170,7 @@ elif LINUX:
     # ---------------------------------------------------------------------------
     extra_compile_args = extra_compile_args + [
         '-rdynamic', '-finline-functions',
-        '-DMARCH_x86_64'
+        '-DMARCH_native'
         ]
     libraries = libraries + ['rt']
     if AEROSPIKE_C_HOME:
