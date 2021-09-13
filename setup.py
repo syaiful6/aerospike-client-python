@@ -26,8 +26,8 @@ from setuptools import setup, Extension
 # ENVIRONMENT VARIABLES
 ################################################################################
 
-# os.putenv('ARCHFLAGS', '-arch x86_64')
-# os.environ['ARCHFLAGS'] = '-arch x86_64'
+os.putenv('ARCHFLAGS', '-arch x86_64')
+os.environ['ARCHFLAGS'] = '-arch x86_64'
 AEROSPIKE_C_VERSION = os.getenv('AEROSPIKE_C_VERSION')
 if not AEROSPIKE_C_VERSION:
     AEROSPIKE_C_VERSION = '5.2.0'
