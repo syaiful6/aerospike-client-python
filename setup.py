@@ -26,8 +26,8 @@ from setuptools import setup, Extension
 # ENVIRONMENT VARIABLES
 ################################################################################
 
-os.putenv('ARCHFLAGS', '-arch x86_64')
-os.environ['ARCHFLAGS'] = '-arch x86_64'
+# os.putenv('ARCHFLAGS', '-arch x86_64')
+# os.environ['ARCHFLAGS'] = '-arch x86_64'
 AEROSPIKE_C_VERSION = os.getenv('AEROSPIKE_C_VERSION')
 if not AEROSPIKE_C_VERSION:
     AEROSPIKE_C_VERSION = '5.2.0'
@@ -124,7 +124,7 @@ include_dirs = ['src/include'] + [x for x in os.getenv('CPATH', '').split(':') i
 extra_compile_args = [
     '-std=gnu99', '-g', '-Wall', '-fPIC', '-O1',
     '-fno-common', '-fno-strict-aliasing', '-Wno-strict-prototypes',
-    '-march=nocona',
+    '-march=native',
     '-D_FILE_OFFSET_BITS=64', '-D_REENTRANT', '-D_GNU_SOURCE'
     ]
 extra_objects = []
